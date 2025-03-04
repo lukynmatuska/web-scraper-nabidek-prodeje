@@ -15,7 +15,7 @@ class ScraperBravis(ScraperBase):
     name = "BRAVIS"
     logo_url = "https://www.bravis.cz/content/img/logo-small.png"
     color = 0xCE0020
-    base_url = "https://www.bravis.cz/pronajem-bytu"
+    base_url = "https://www.bravis.cz/prodej-bytu"
 
 
     def build_response(self) -> requests.Response:
@@ -32,7 +32,7 @@ class ScraperBravis(ScraperBase):
         if Disposition.FLAT_5_UP in self.disposition:
             url += "typ-nemovitosti-byt+5=&"
 
-        url += "typ-nabidky=pronajem-bytu&lokalita=cele-brno&vybavenost=nezalezi&q=&action=search&s=1-20-order-0"
+        url += "typ-nabidky=prodej-bytu&lokalita=cele-brno&vybavenost=nezalezi&q=&action=search&s=1-20-order-0"
 
         logging.debug("BRAVIS request: %s", url)
 
